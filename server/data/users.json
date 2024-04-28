@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "first_name": "Alex",
+    "last_name": "Johnson",
+    "username": "alexjohnson",
+    "email": "alex.johnson@example.com",
+    "password": "$2b$10$xUseghEZ7OqkjcDyHxV6u.3F4TJ7wgriII2Z2KEsDjHDsytfNMlH."
+  },
+  {
+    "id": 2,
+    "first_name": "Blake",
+    "last_name": "Smith",
+    "username": "blakesmith",
+    "email": "blake.smith@example.com",
+    "password": "$2b$10$yTYSO36A5twWX.Ii1upjXeLTuctsEpcTNWC0d5tv4GGGTPqe4y3yu"
+  },
+  {
+    "id": 3,
+    "first_name": "Casey",
+    "last_name": "Davis",
+    "username": "caseydavis",
+    "email": "casey.davis@example.com",
+    "password": "$2b$10$vmQ9vk/lvjHoXoaJtA1jFOAy74ddGdNOaQ8RtC2SMu4.2IXQLeEAa"
+  },
+  {
+    "id": 4,
+    "first_name": "Drew",
+    "last_name": "Taylor",
+    "username": "drewtaylor",
+    "email": "drew.taylor@example.com",
+    "password": "$2b$10$FmwxTMoFGY.gdAUOIp7H5ebLf2jygO2RQT5lGCu5O0/cRybp/7WOG"
+  },
+  {
+    "id": 5,
+    "first_name": "Erin",
+    "last_name": "Miller",
+    "username": "erinmiller",
+    "email": "erin.miller@example.com",
+    "password": "$2b$10$RuU2/UeRJY.r3721VK1nlOhLKtn5KeDoIEzvsh7Bzgk/OI.MFbJHu"
+  },
+  {
+    "id": 6,
+    "first_name": "Finley",
+    "last_name": "Wilson",
+    "username": "finleywilson",
+    "email": "finley.wilson@example.com",
+    "password": "$2b$10$eDp88uUHEcm/VqmCmnEFtuXu6EtNjJOszlJUWIGXowoBXejFoprka"
+  }
+]

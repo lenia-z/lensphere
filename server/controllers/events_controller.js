@@ -1,12 +1,12 @@
-const knex = require("knex")(require("../knexfile"));
+const knex = require('knex')(require('../knexfile'));
 
 // Get all events
 const getAllEvents = async (req, res) => {
   try {
-    const data = await knex("events").select("*");
+    const data = await knex('events').select('*');
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ message: "Error retrieving events", error });
+    res.status(500).json({ message: 'Error retrieving events', error });
   }
 };
 
@@ -15,13 +15,13 @@ const getUserEvents = async (req, res) => {
   try {
     const userId = req.userData.id;
 
-    const data = await knex("events")
-      .where("user_id", userId)
-      .select("*");
+    const data = await knex('events')
+      .where('user_id', userId)
+      .select('*');
     
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ message: "Error retrieving user events", error });
+    res.status(500).json({ message: 'Error retrieving user events', error });
   }
 };
 
@@ -41,10 +41,10 @@ const createEvent = async (req, res) => {
       date: req.body.date,
     };
 
-    await knex("events").insert(newEvent);
+    await knex('events').insert(newEvent);
     res.status(201).json({ success: true });
   } catch (error) {
-    res.status(500).json({ message: "Error creating event", error });
+    res.status(500).json({ message: 'Error creating event', error });
   }
 };
 
@@ -64,14 +64,14 @@ const updateEvent = async (req, res) => {
       date: req.body.date,
     };
     
-    await knex("events")
-      .where("id", eventId)
-      .where("user_id", userId)
+    await knex('events')
+      .where('id', eventId)
+      .where('user_id', userId)
       .update(updates);
 
     res.status(200).json({ success: true });
   } catch (error) {
-    res.status(500).json({ message: "Error updating event", error });
+    res.status(500).json({ message: 'Error updating event', error });
   }
 };
 
@@ -81,14 +81,14 @@ const deleteEvent = async (req, res) => {
     const userId = req.userData.id;
     const eventId = req.params.id;
 
-    await knex("events")
-      .where("id", eventId)
-      .where("user_id", userId)
+    await knex('events')
+      .where('id', eventId)
+      .where('user_id', userId)
       .del();
     
     res.status(204).end();
   } catch (error) {
-    res.status(500).json({ message: "Error deleting event", error });
+    res.status(500).json({ message: 'Error deleting event', error });
   }
 };
 

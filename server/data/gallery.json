@@ -5,8 +5,7 @@
     "description": "Urban skyline from a high vantage point at dusk.",
     "image": "https://images.pexels.com/photos/22601915/pexels-photo-22601915.jpeg",
     "likes": 78,
-    "create_at": "2019-03-15 10:45:23",
-    "timezone": "Europe/Paris"
+    "create_at": "2019-03-15 10:45:23"
   },
   {
     "id": 2,
@@ -14,8 +13,7 @@
     "description": "Macro photography of morning dew on grass.",
     "image": "https://images.pexels.com/photos/22431220/pexels-photo-22431220.jpeg",
     "likes": 63,
-    "create_at": "2019-05-01 22:44:46",
-    "timezone": "Asia/Tokyo"
+    "create_at": "2019-05-01 22:44:46"
   },
   {
     "id": 3,
@@ -23,8 +21,7 @@
     "description": "The tranquil and untouched sandy beach in the early morning light.",
     "image": "https://images.pexels.com/photos/21855089/pexels-photo-21855089.jpeg",
     "likes": 102,
-    "create_at": "2019-05-21 18:45:40",
-    "timezone": "Pacific/Auckland"
+    "create_at": "2019-05-21 18:45:40"
   },
   {
     "id": 4,
@@ -32,8 +29,7 @@
     "description": "Close-up shot of a woman's hands as she skilfully captures a butterfly.",
     "image": "https://images.pexels.com/photos/21768151/pexels-photo-21768151.jpeg",
     "likes": 89,
-    "create_at": "2019-07-01 08:25:48",
-    "timezone": "Asia/Seoul"
+    "create_at": "2019-07-01 08:25:48"
   },
   {
     "id": 5,
@@ -41,8 +37,7 @@
     "description": "Picturesque hot air balloons rising over a misty horizon at sunrise.",
     "image": "https://images.pexels.com/photos/21656197/pexels-photo-21656197.jpeg",
     "likes": 75,
-    "create_at": "2019-09-21 12:15:59",
-    "timezone": "Asia/Tokyo"
+    "create_at": "2019-09-21 12:15:59"
   },
   {
     "id": 6,
@@ -50,17 +45,15 @@
     "description": "Captivating still life of vintage camera and glasses against a rustic backdrop.",
     "image": "https://images.pexels.com/photos/21370890/pexels-photo-21370890.jpeg",
     "likes": 86,
-    "create_at": "2019-11-21 14:35:51",
-    "timezone": "Australia/Sydney"
+    "create_at": "2019-11-21 14:35:51"
   },
   {
     "id": 7,
     "user_id": 5,
-    "description": null,
+    "description": "",
     "image": "https://images.pexels.com/photos/22303826/pexels-photo-22303826.jpeg",
     "likes": 45,
-    "create_at": "2019-12-01 14:55:11",
-    "timezone": "America/New_York"
+    "create_at": "2019-12-01 14:55:11"
   },
   {
     "id": 8,
@@ -68,8 +61,7 @@
     "description": "Abstract art in photography showcasing vibrant street graffiti.",
     "image": "https://images.pexels.com/photos/21790501/pexels-photo-21790501.jpeg",
     "likes": 98,
-    "create_at": "2020-02-01 10:05:52",
-    "timezone": "America/Los_Angeles"
+    "create_at": "2020-02-01 10:05:52"
   },
   {
     "id": 9,
@@ -77,8 +69,7 @@
     "description": "A serene setting of a boat docked on the calm lake waters at dawn.",
     "image": "https://images.pexels.com/photos/21758774/pexels-photo-21758774.jpeg",
     "likes": 111,
-    "create_at": "2020-05-05 23:35:13",
-    "timezone": "Africa/Cairo"
+    "create_at": "2020-05-05 23:35:13"
   },
   {
     "id": 10,
@@ -86,8 +77,7 @@
     "description": "Glimpse into a greenhouse nurturing various exotic plants.",
     "image": "https://images.pexels.com/photos/21750830/pexels-photo-21750830.jpeg",
     "likes": 59,
-    "create_at": "2020-05-10 07:25:36",
-    "timezone": "Asia/Kolkata"
+    "create_at": "2020-05-10 07:25:36"
   },
   {
     "id": 11,
@@ -95,8 +85,7 @@
     "description": "A bird's-eye view of a city, highlighted by the golden lights below.",
     "image": "https://images.pexels.com/photos/21660419/pexels-photo-21660419.jpeg",
     "likes": 64,
-    "create_at": "2021-10-10 07:05:55",
-    "timezone": "Australia/Darwin"
+    "create_at": "2021-10-10 07:05:55"
   },
   {
     "id": 12,
@@ -104,8 +93,7 @@
     "description": "A candid capture of a busy street scene.",
     "image": "https://images.pexels.com/photos/21694079/pexels-photo-21694079.jpeg",
     "likes": 52,
-    "create_at": "2021-11-01 09:16:56",
-    "timezone": "America/Phoenix"
+    "create_at": "2021-11-01 09:16:56"
   },
   {
     "id": 13,
@@ -113,8 +101,7 @@
     "description": "Quiet aisle in a greenhouse, surrounded by the beauty of nature.",
     "image": "https://images.pexels.com/photos/21750830/pexels-photo-21750830.jpeg",
     "likes": 43,
-    "create_at": "2021-11-10 17:25:57",
-    "timezone": "Pacific/Guadalcanal"
+    "create_at": "2021-11-10 17:25:57"
   },
   {
     "id": 14,
@@ -122,17 +109,15 @@
     "description": "Mystical fog over a lush forest, perfect for moody landscape photos.",
     "image": "https://images.pexels.com/photos/21758774/pexels-photo-21758774.jpeg",
     "likes": 79,
-    "create_at": "2022-04-10 22:45:22",
-    "timezone": "Africa/Nairobi"
+    "create_at": "2022-04-10 22:45:22"
   },
   {
     "id": 15,
     "user_id": 2,
-    "description": null,
+    "description": "",
     "image": "https://images.pexels.com/photos/21614980/pexels-photo-21614980.jpeg",
     "likes": 61,
-    "create_at": "2022-08-10 07:05:59",
-    "timezone": "Asia/Kamchatka"
+    "create_at": "2022-08-10 07:05:59"
   },
   {
     "id": 16,
@@ -140,8 +125,7 @@
     "description": "The warm hues of sunset reflecting off skyscrapers.",
     "image": "https://images.pexels.com/photos/21580869/pexels-photo-21580869.jpeg",
     "likes": 34,
-    "create_at": "2022-09-21 19:46:00",
-    "timezone": "Asia/Hong_Kong"
+    "create_at": "2022-09-21 19:46:00"
   },
   {
     "id": 17,
@@ -149,8 +133,7 @@
     "description": "Embracing nature's solitude on a serene lakeside morning.",
     "image": "https://images.pexels.com/photos/21578789/pexels-photo-21578789.jpeg",
     "likes": 98,
-    "create_at": "2022-10-10 17:56:31",
-    "timezone": "America/Los_Angeles"
+    "create_at": "2022-10-10 17:56:31"
   },
   {
     "id": 18,
@@ -158,8 +141,7 @@
     "description": "Captivating patterns of clouds, signifying the nearing storm.",
     "image": "https://images.pexels.com/photos/22036816/pexels-photo-22036816.jpeg",
     "likes": 25,
-    "create_at": "2022-10-12 19:06:33",
-    "timezone": "Pacific/Tarawa"
+    "create_at": "2022-10-12 19:06:33"
   },
   {
     "id": 19,
@@ -167,17 +149,15 @@
     "description": "A narrow trail deep in the vibrant jungle.",
     "image": "https://images.pexels.com/photos/21952599/pexels-photo-21952599.jpeg",
     "likes": 66,
-    "create_at": "2022-11-10 17:05:02",
-    "timezone": "Pacific/Pohnpei"
+    "create_at": "2022-11-10 17:05:02"
   },
   {
     "id": 20,
     "user_id": 4,
-    "description": null,
+    "description": "",
     "image": "https://images.pexels.com/photos/21939689/pexels-photo-21939689.jpeg",
     "likes": 51,
-    "create_at": "2022-11-10 07:06:04",
-    "timezone": "Pacific/Apia"
+    "create_at": "2022-11-10 07:06:04"
   },
   {
     "id": 21,
@@ -185,8 +165,7 @@
     "description": "Magnificent aerial view of a cityscape at dusk.",
     "image": "https://images.pexels.com/photos/22601915/pexels-photo-22601915.jpeg",
     "likes": 85,
-    "create_at": "2023-02-01 14:56:15",
-    "timezone": "America/New_York"
+    "create_at": "2023-02-01 14:56:15"
   },
   {
     "id": 22,
@@ -194,8 +173,7 @@
     "description": "Summer vibes with a bowl of fresh blueberries.",
     "image": "https://images.pexels.com/photos/22431220/pexels-photo-22431220.jpeg",
     "likes": 73,
-    "create_at": "2023-03-18 09:50:16",
-    "timezone": "Europe/London"
+    "create_at": "2023-03-18 09:50:16"
   },
   {
     "id": 23,
@@ -203,8 +181,7 @@
     "description": "Monochrome tropical shoreline, peaceful and calm.",
     "image": "https://images.pexels.com/photos/21855089/pexels-photo-21855089.jpeg",
     "likes": 60,
-    "create_at": "2023-04-01 07:30:00",
-    "timezone": "Asia/Tokyo"
+    "create_at": "2023-04-01 07:30:00"
   },
   {
     "id": 24,
@@ -212,8 +189,7 @@
     "description": "Elegant lady by the door, pondering in silence.",
     "image": "https://images.pexels.com/photos/21768151/pexels-photo-21768151.jpeg",
     "likes": 98,
-    "create_at": "2023-04-27 11:39:00",
-    "timezone": "Australia/Sydney"
+    "create_at": "2023-04-27 11:39:00"
   },
   {
     "id": 25,
@@ -221,17 +197,15 @@
     "description": "Scenic hot air balloon flight over a desert city's edge.",
     "image": "https://images.pexels.com/photos/21656197/pexels-photo-21656197.jpeg",
     "likes": 115,
-    "create_at": "2023-07-09 10:12:49",
-    "timezone": "America/Los_Angeles"
+    "create_at": "2023-07-09 10:12:49"
   },
   {
     "id": 26,
     "user_id": 1,
-    "description": null,
+    "description": "",
     "image": "https://images.pexels.com/photos/21370890/pexels-photo-21370890.jpeg",
     "likes": 42,
-    "create_at": "2023-07-22 11:12:20",
-    "timezone": "Asia/Kolkata"
+    "create_at": "2023-07-22 11:12:20"
   },
   {
     "id": 27,
@@ -239,8 +213,7 @@
     "description": "The beauty of minimalist architecture captured in daylight.",
     "image": "https://images.pexels.com/photos/22303826/pexels-photo-22303826.jpeg",
     "likes": 89,
-    "create_at": "2023-10-11 19:03:11",
-    "timezone": "Europe/Paris"
+    "create_at": "2023-10-11 19:03:11"
   },
   {
     "id": 28,
@@ -248,8 +221,7 @@
     "description": "City night lights reflecting off a tall skyscraper.",
     "image": "https://images.pexels.com/photos/21790501/pexels-photo-21790501.jpeg",
     "likes": 107,
-    "create_at": "2024-01-28 09:12:30",
-    "timezone": "America/Chicago"
+    "create_at": "2024-01-28 09:12:30"
   },
   {
     "id": 29,
@@ -257,16 +229,14 @@
     "description": "Captivating early morning with hot air balloons in Cappadocia.",
     "image": "https://images.pexels.com/photos/21758774/pexels-photo-21758774.jpeg",
     "likes": 63,
-    "create_at": "2024-04-08 15:30:00",
-    "timezone": "Asia/Shanghai"
+    "create_at": "2024-04-08 15:30:00"
   },
   {
     "id": 30,
     "user_id": 4,
-    "description": null,
+    "description": "",
     "image": "https://images.pexels.com/photos/21750830/pexels-photo-21750830.jpeg",
     "likes": 94,
-    "create_at": "2024-04-12 12:12:30",
-    "timezone": "America/Denver"
+    "create_at": "2024-04-12 12:12:30"
   }
 ]

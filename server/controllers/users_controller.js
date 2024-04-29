@@ -59,25 +59,25 @@ const login = async (req, res) => {
     const queryObject = validator.isEmail(identifier)
       ? { email: identifier }
       : { username: identifier };
-    
+
     // Check if user exists in the database
-    const user = await knex("users").where({ queryObject }).first();
+    const user = await knex('users').where(queryObject).first();
 
     // Verify the provided password against the stored hash
-    if (user && (await bcrypt.compare(password, user.password))) {
-      // Password is correct, create the JWT token
-      const token = jwt.sign(
-        { id: user.id, username: user.username },
-        process.env.JWT_SECRET,
-        { expiresIn: '1d' } 
-      );
-
-      // Respond with the JWT token
-      res.status(200).json({ token });
-    } else {
+    if (!user || !(await bcrypt.compare(password, user.password))) {
       // Authentication failed
-      res.status(401).json({ message: 'Invalid username/email or password' });
+      return res.status(401).json({ message: 'Invalid username/email or password' });
     }
+
+    // Password is correct, create the JWT token
+    const token = jwt.sign(
+      { id: user.id, username: user.username },
+      process.env.JWT_SECRET,
+      { expiresIn: '1d' }
+    );
+
+    // Respond with the JWT token
+    res.status(200).json({ token });
   } catch (error) {
     res.status(500).json({ message: 'Error logging in', error: error });
   }
@@ -99,28 +99,24 @@ const updateProfile = async (req, res) => {
   }
 
   try {
-    const doesUsernameExist = await knex("users")
+    const doesUsernameExist = await knex('users')
       .whereNot({ id: userId })
       .andWhere({ username })
       .first();
-    const doesEmailExist = await knex("users")
+    const doesEmailExist = await knex('users')
       .whereNot({ id: userId })
       .andWhere({ email })
       .first();
 
     if (doesUsernameExist) {
-      return res
-        .status(409)
-        .json({ message: "Username already taken by another user" });
+      return res.status(409).json({ message: 'Username already exist' });
     }
     if (doesEmailExist) {
-      return res
-        .status(409)
-        .json({ message: "Email already in use by another user" });
+      return res.status(409).json({ message: 'Email already exist' });
     }
 
     // Update user profile in the database
-    await knex("users").where({ id: userId }).update({
+    await knex('users').where({ id: userId }).update({
       first_name,
       last_name,
       username,
@@ -128,7 +124,7 @@ const updateProfile = async (req, res) => {
     });
 
     // Respond with success message
-    res.status(200).json({ success: true });
+    res.status(201).json({ success: true });
   } catch (error) {
     res.status(500).json({ message: 'Error updating user profile', error: error });
   }
@@ -152,7 +148,7 @@ const changePassword = async (req, res) => {
   ) {
     return res
       .status(400)
-      .json({ message: "Password does not meet complexity requirements" });
+      .json({ message: 'Password does not meet complexity requirements' });
   }
 
   try {
@@ -160,14 +156,14 @@ const changePassword = async (req, res) => {
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
     // Update the user's password in the database
-    await knex("users").where({ id: userId }).update({
+    await knex('users').where({ id: userId }).update({
       password: hashedPassword,
     });
 
     // Respond with success message
-    res.status(200).json({ success: true });
+    res.status(201).json({ success: true });
   } catch (error) {
-    res.status(500).json({ message: "Error updating password", error: error });
+    res.status(500).json({ message: 'Error updating password', error: error });
   }
 };
 

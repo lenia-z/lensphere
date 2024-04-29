@@ -15,7 +15,6 @@ exports.up = function(knex) {
     table.integer("likes").defaultTo(0);
     table.timestamp("date").notNullable();
     table.timestamp("create_at").defaultTo(knex.fn.now());
-    table.string("timezone").notNullable();
   });
 };
 

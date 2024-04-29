@@ -10,8 +10,7 @@
     "address": "Broadway",
     "likes": 42,
     "date": "2024-08-15 18:00:00",
-    "create_at": "2024-03-30 09:15:00",
-    "timezone": "America/New_York"
+    "create_at": "2024-03-30 09:15:00"
   },
   {
     "id": 2,
@@ -24,8 +23,7 @@
     "address": "Stanley Park",
     "likes": 59,
     "date": "2024-06-03 15:00:00",
-    "create_at": "2024-01-23 10:30:00",
-    "timezone": "America/Vancouver"
+    "create_at": "2024-01-23 10:30:00"
   },
   {
     "id": 3,
@@ -38,8 +36,7 @@
     "address": "Jardim Botânico",
     "likes": 35,
     "date": "2024-09-21 10:00:00",
-    "create_at": "2024-02-01 12:00:00",
-    "timezone": "America/Sao_Paulo"
+    "create_at": "2024-02-01 12:00:00"
   },
   {
     "id": 4,
@@ -52,8 +49,7 @@
     "address": "El Retiro Park",
     "likes": 47,
     "date": "2024-05-17 17:00:00",
-    "create_at": "2023-11-10 09:10:00",
-    "timezone": "Europe/Madrid"
+    "create_at": "2023-11-10 09:10:00"
   },
   {
     "id": 5,
@@ -66,8 +62,7 @@
     "address": "Brandenburg Gate",
     "likes": 53,
     "date": "2024-07-30 09:00:00",
-    "create_at": "2024-04-13 11:24:00",
-    "timezone": "Europe/Berlin"
+    "create_at": "2024-04-13 11:24:00"
   },
   {
     "id": 6,
@@ -80,8 +75,7 @@
     "address": "Piazza San Marco",
     "likes": 68,
     "date": "2024-08-10 18:00:00",
-    "create_at": "2024-01-10 13:00:00",
-    "timezone": "Europe/Rome"
+    "create_at": "2024-01-10 13:00:00"
   },
   {
     "id": 7,
@@ -94,8 +88,7 @@
     "address": "Cairns",
     "likes": 22,
     "date": "2024-09-14 12:30:00",
-    "create_at": "2023-12-24 11:45:00",
-    "timezone": "Australia/Brisbane"
+    "create_at": "2023-12-24 11:45:00"
   },
   {
     "id": 8,
@@ -108,8 +101,7 @@
     "address": "Open Savannah",
     "likes": 41,
     "date": "2024-10-06 10:00:00",
-    "create_at": "2024-01-16 15:00:00",
-    "timezone": "Africa/Nairobi"
+    "create_at": "2024-01-16 15:00:00"
   },
   {
     "id": 9,
@@ -122,8 +114,7 @@
     "address": "Golden Gate Bridge",
     "likes": 55,
     "date": "2024-11-19 15:30:00",
-    "create_at": "2024-03-29 17:30:00",
-    "timezone": "America/Los_Angeles"
+    "create_at": "2024-03-29 17:30:00"
   },
   {
     "id": 10,
@@ -136,8 +127,7 @@
     "address": "Arctic Cathedral",
     "likes": 33,
     "date": "2024-08-27 18:00:00",
-    "create_at": "2023-10-12 20:10:00",
-    "timezone": "Europe/Oslo"
+    "create_at": "2023-10-12 20:10:00"
   },
   {
     "id": 11,
@@ -150,8 +140,7 @@
     "address": "Valle de la Luna",
     "likes": 62,
     "date": "2024-07-23 11:00:00",
-    "create_at": "2024-04-23 19:20:00",
-    "timezone": "America/Santiago"
+    "create_at": "2024-04-23 19:20:00"
   },
   {
     "id": 12,
@@ -164,8 +153,7 @@
     "address": "The Bund",
     "likes": 30,
     "date": "2024-05-30 14:00:00",
-    "create_at": "2024-01-23 12:00:00",
-    "timezone": "Asia/Shanghai"
+    "create_at": "2024-01-23 12:00:00"
   },
   {
     "id": 13,
@@ -178,8 +166,7 @@
     "address": "Tate Modern",
     "likes": 44,
     "date": "2024-06-15 09:00:00",
-    "create_at": "2024-02-20 15:30:00",
-    "timezone": "Europe/London"
+    "create_at": "2024-02-20 15:30:00"
   },
   {
     "id": 14,
@@ -192,8 +179,7 @@
     "address": "Shibuya Crossing",
     "likes": 47,
     "date": "2024-10-25 11:00:00",
-    "create_at": "2023-10-24 22:00:00",
-    "timezone": "Asia/Tokyo"
+    "create_at": "2023-10-24 22:00:00"
   },
   {
     "id": 15,
@@ -206,7 +192,6 @@
     "address": "Hawa Mahal",
     "likes": 52,
     "date": "2024-08-10 17:00:00",
-    "create_at": "2024-04-27 09:40:00",
-    "timezone": "Asia/Kolkata"
+    "create_at": "2024-04-27 09:40:00"
   }
 ]

@@ -124,7 +124,7 @@ const updateProfile = async (req, res) => {
     });
 
     // Respond with success message
-    res.status(201).json({ success: true });
+    res.status(200).json({ success: true });
   } catch (error) {
     res.status(500).json({ message: 'Error updating user profile', error: error });
   }
@@ -161,7 +161,7 @@ const changePassword = async (req, res) => {
     });
 
     // Respond with success message
-    res.status(201).json({ success: true });
+    res.status(200).json({ success: true });
   } catch (error) {
     res.status(500).json({ message: 'Error updating password', error: error });
   }

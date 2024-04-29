@@ -6,7 +6,7 @@ const getAllGalleryItems = async (req, res) => {
     const data = await knex.select('*').from('gallery');
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ message: 'Error getting gallery items', error: error });
+    res.status(500).json({ message: 'Error retrieving gallery items', error: error });
   }
 };
 
@@ -17,7 +17,7 @@ const getUserGalleryItems = async (req, res) => {
     const data = await knex('gallery').where('user_id', userId);
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ message: 'Error getting user gallery items', error: error });
+    res.status(500).json({ message: 'Error retrieving user gallery items', error: error });
   }
 };
 
@@ -41,7 +41,7 @@ const createGalleryItem = async (req, res) => {
   }
 };
 
-// Update an existing gallery item
+// Update a gallery item
 const updateGalleryItem = async (req, res) => {
   try {
     const itemId = req.params.id;
@@ -56,7 +56,7 @@ const updateGalleryItem = async (req, res) => {
       .where('user_id', userId)
       .update(updates);
 
-    res.status(201).json({ success: true })
+    res.status(200).json({ success: true })
   } catch (error) {
     res.status(500).json({ message: 'Error updating gallery item', error: error });
   }

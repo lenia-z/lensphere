@@ -3,7 +3,47 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const validator = require('validator');
 
-// Define the signup function to create new users
+// Get users non-sensitive info
+const getUsersProfile = async (req, res) => {
+  try {
+    const users = await knex('users').select(
+      'id',
+      'first_name',
+      'last_name',
+      'username'
+    );
+
+    res.status(200).json(users);
+  } catch (error) {
+    console.error(error)
+    res
+      .status(500)
+      .json({ message: 'Error getting users non-sensitive info.', error });
+  }
+}
+
+// Get current user's profile
+const getCurrentUserProfile = async (req, res) => {
+  try {
+    const userId = req.userData.id;
+    const user = await knex('users')
+      .select('first_name', 'last_name', 'username', 'email')
+      .where({ id: userId })
+      .first();
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: 'Error getting current user profile.', error: error });
+  }
+};
+
+// Create new users
 const signup = async (req, res) => {
   // Extract user data from request body and validate the data
   const first_name = validator.trim(req.body.first_name);
@@ -48,7 +88,7 @@ const signup = async (req, res) => {
   }
 };
 
-// Define the login function for authenticating users
+// Authenticate users
 const login = async (req, res) => {
   // Extract the credentials, trim and validate
   const identifier = validator.trim(req.body.identifier);
@@ -83,7 +123,7 @@ const login = async (req, res) => {
   }
 };
 
-// Define the updateProfile function for updating user information
+// Update user information
 const updateProfile = async (req, res) => {
   // Extract userId from authentication middleware
   const userId = req.userData.id;
@@ -130,6 +170,7 @@ const updateProfile = async (req, res) => {
   }
 };
 
+// Change password
 const changePassword = async (req, res) => {
   // Extract user id from the token
   const userId = req.userData.id;
@@ -168,6 +209,8 @@ const changePassword = async (req, res) => {
 };
 
 module.exports = {
+  getUsersProfile,
+  getCurrentUserProfile,
   signup,
   login,
   updateProfile,

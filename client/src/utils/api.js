@@ -1,22 +1,37 @@
 import axios from "axios";
 
-const BASE_URL = process.env.API_BASE_URL || "http://localhost:5000";
+const BASE_URL = process.env.REACT_APP__URL || "http://localhost:5050";
 
 const Lensphere_API = {
+  // Get users non-sensitive info
+  async getUsersProfile() {
+    return await axios.get(`${BASE_URL}/users`);
+  },
+
+  // Get users non-sensitive info
+  async getCurrentUserProfile() {
+    const token = localStorage.getItem("token");
+    return await axios.get(`${BASE_URL}/users/me`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  },
+  
   // Create new user
   async signup(userData) {
-    return await axios.post(`${BASE_URL}/signup`, userData);
+    return await axios.post(`${BASE_URL}/users/signup`, userData);
   },
 
   // Login
   async login(credentials) {
-    return await axios.post(`${BASE_URL}/login`, credentials);
+    return await axios.post(`${BASE_URL}/users/login`, credentials);
   },
 
   // Update user profile
   async updateUserProfile(profileData) {
     const token = localStorage.getItem("token");
-    return await axios.put(`${BASE_URL}/update-profile`, profileData, {
+    return await axios.put(`${BASE_URL}/users/update-profile`, profileData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -26,7 +41,7 @@ const Lensphere_API = {
   // Change password
   async changeUserPassword(passwordData) {
     const token = localStorage.getItem("token");
-    return await axios.put(`${BASE_URL}/change-password`, passwordData, {
+    return await axios.put(`${BASE_URL}/users/change-password`, passwordData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,7 +56,7 @@ const Lensphere_API = {
   // Get user's gallery items
   async getUserGalleryItems() {
     const token = localStorage.getItem("token");
-    return await axios.get(`${API_URL}/gallery/user`, {
+    return await axios.get(`${BASE_URL}/gallery/user`, {
       headers: { Authorization: `Bearer ${token}` },
     });
   },
@@ -49,7 +64,7 @@ const Lensphere_API = {
   // Create a gallery item
   async createGalleryItem(newGallery) {
     const token = localStorage.getItem("token");
-    return await axios.post(`${API_URL}/gallery`, newGallery, {
+    return await axios.post(`${BASE_URL}/gallery`, newGallery, {
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`,
@@ -60,7 +75,7 @@ const Lensphere_API = {
   // Update a gallery item
   async updateGalleryItem(itemId, galleryData) {
     const token = localStorage.getItem("token");
-    return await axios.put(`${API_URL}/gallery/${itemId}`, galleryData, {
+    return await axios.put(`${BASE_URL}/gallery/${itemId}`, galleryData, {
       headers: { Authorization: `Bearer ${token}` },
     });
   },
@@ -68,7 +83,7 @@ const Lensphere_API = {
   // Delete a gallery item
   async deleteGalleryItem(itemId) {
     const token = localStorage.getItem("token");
-    return await axios.delete(`${API_URL}/gallery/${itemId}`, {
+    return await axios.delete(`${BASE_URL}/gallery/${itemId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
   },

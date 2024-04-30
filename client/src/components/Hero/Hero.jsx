@@ -7,7 +7,7 @@ const Hero = () => {
   const [imageSrc, setImageSrc] = useState("");
   const [users, setUsers] = useState([])
   const [currentUser, setCurrentUser] = useState();
-
+  const [opacity, setOpacity] = useState(0);
 
   const getGallery = async () => {
     try {
@@ -49,20 +49,30 @@ const Hero = () => {
 
   useEffect(() => {
     getRandomImage();
-    const intervalId = setInterval(() => {
-      getRandomImage();
-    }, 3000);
 
-    return () => clearInterval(intervalId);
+    setOpacity(1);
+
+    let interval = setInterval(() => {
+      setOpacity(0);
+
+      setTimeout(() => {
+        getRandomImage();
+        setOpacity(1);
+      }, 1000);
+    }, 3000);
+    return () => clearInterval(interval);
   }, [gallery, users]);
+
+  const imageClassName =
+    opacity === 1 ? "hero-image-visible" : "hero-image-hidden";
 
   return (
     <div className="w-full h-[calc(100vh-4rem)] mt-16 bg-base-100 relative overflow-hidden">
       {imageSrc && (
         <img
           src={imageSrc}
-          alt="Gallery"
-          className="w-full h-full object-cover absolute top-0 left-0"
+          alt="background"
+          className={`absolute top-0 left-0 w-full h-full object-cover ${imageClassName}`}
         />
       )}
       <div className="absolute w-full h-full top-0 left-0 bg-black/30 shadow-inner"></div>

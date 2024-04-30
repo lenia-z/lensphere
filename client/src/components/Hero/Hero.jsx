@@ -57,7 +57,7 @@ const Hero = () => {
   }, [gallery, users]);
 
   return (
-    <div className="w-full h-[calc(100vh-4rem)] bg-base-100 relative overflow-hidden">
+    <div className="w-full h-[calc(100vh-4rem)] mt-16 bg-base-100 relative overflow-hidden">
       {imageSrc && (
         <img
           src={imageSrc}
@@ -67,7 +67,7 @@ const Hero = () => {
       )}
       <div className="absolute w-full h-full top-0 left-0 bg-black/30 shadow-inner"></div>
       {currentUser && (
-        <p className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-white text-lg mb-5">
+        <p className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-stone-50 text-xs mb-8">
           {currentUser.first_name} {currentUser.last_name}
         </p>
       )}

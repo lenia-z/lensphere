@@ -13,3 +13,13 @@
     @apply m-0 p-0 bg-base-100 font-poppins;
   }
 }
+
+html {
+  scrollbar-width: none; /* Firefox */
+  overflow: -moz-scrollbars-none; /* Firefox 的另一种方式 */
+}
+
+html::-webkit-scrollbar {
+  width: 0; /* 针对 Chrome, Safari, 和 Opera */
+  height: 0;
+}

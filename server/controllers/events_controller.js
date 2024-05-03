@@ -68,8 +68,13 @@ const updateEvent = async (req, res) => {
       .where('id', eventId)
       .where('user_id', userId)
       .update(updates);
+    
+    const updatedEvent = await knex("gallery")
+      .where("id", eventId)
+      .where("user_id", userId)
+      .first();
 
-    res.status(200).json({ success: true });
+    res.status(200).json(updatedEvent);
   } catch (error) {
     res.status(500).json({ message: 'Error updating event', error });
   }

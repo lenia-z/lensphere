@@ -10,6 +10,7 @@ router.get('/user', authenticateWithJwt, galleryController.getUserGalleryItems);
 router.route('/:id') // Gallery ID needed
   .put(authenticateWithJwt, galleryController.updateGalleryItem)
   .delete(authenticateWithJwt, galleryController.deleteGalleryItem);
+router.put("/:id/likes", galleryController.likeGalleryItem);
 
 router.post('/', authenticateWithJwt, upload.single('image'), galleryController.createGalleryItem);
 

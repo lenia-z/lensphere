@@ -7,7 +7,7 @@ const Header = () => {
   const isAuthenticated = true;
 
   return (
-    <header className="bg-base-100 w-full h-16 flex justify-between items-center px-4 md:px-8 xl:px-32 z-50 fixed top-0 left-0 text-sm text-stone-50">
+    <header className="w-full h-16 flex justify-between items-center px-4 md:px-8 xl:px-32 z-50 absolute top-0 left-0 text-xs md:text-sm text-stone-100 font-light">
       <DrawerMenu isAuthenticated={isAuthenticated} />
 
       <NavBarMenu isAuthenticated={isAuthenticated} />

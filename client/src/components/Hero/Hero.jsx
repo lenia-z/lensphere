@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import APP_API from "../../utils/api";
-import "./Hero.scss";
+import "./Hero.css";
 
 const Hero = () => {
   const [gallery, setGallery] = useState([]);
@@ -42,7 +42,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    document.title = "Gallery";
+    document.title = "Lensphere";
     getGallery();
     getUsers();
   }, []);
@@ -67,7 +67,7 @@ const Hero = () => {
     opacity === 1 ? "hero-image-visible" : "hero-image-hidden";
 
   return (
-    <div className="w-full h-[calc(100vh-4rem)] mt-16 bg-base-100 relative overflow-hidden">
+    <div className="w-full h-screen relative overflow-hidden bg-base-100">
       {imageSrc && (
         <img
           src={imageSrc}
@@ -75,9 +75,9 @@ const Hero = () => {
           className={`absolute top-0 left-0 w-full h-full object-cover ${imageClassName}`}
         />
       )}
-      <div className="absolute w-full h-full top-0 left-0 bg-black/30 shadow-inner"></div>
+      <div className="absolute w-full h-full top-0 left-0 bg-base-100/30 shadow-inner"></div>
       {currentUser && (
-        <p className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-stone-50 text-xs mb-8">
+        <p className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-stone-100 text-xs font-light mb-8">
           {currentUser.first_name} {currentUser.last_name}
         </p>
       )}

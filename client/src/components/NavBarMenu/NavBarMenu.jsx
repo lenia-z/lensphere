@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./NavBarMenu.scss";
+import "./NavBarMenu.css";
 
 const NavBarMenu = ({ isAuthenticated }) => (
   <nav className="hidden md:flex justify-between items-center gap-4">

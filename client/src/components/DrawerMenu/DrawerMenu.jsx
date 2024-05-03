@@ -26,7 +26,7 @@ const DrawerMenu = ({ isAuthenticated }) => {
 
       <div className="drawer-side">
         <label htmlFor="drawer-toggle" className="drawer-overlay"></label>
-        <ul className="menu pt-16 px-4 overflow-y-auto w-1/2 h-full bg-base-200">
+        <ul className="menu pt-16 px-4 overflow-y-auto w-1/2 h-full bg-base-200/75">
           <li>
             <Link to="/">Home</Link>
           </li>

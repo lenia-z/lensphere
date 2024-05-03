@@ -17,7 +17,7 @@ const Lensphere_API = {
       },
     });
   },
-  
+
   // Create new user
   async signup(userData) {
     return await axios.post(`${BASE_URL}/users/signup`, userData);
@@ -78,6 +78,11 @@ const Lensphere_API = {
     return await axios.put(`${BASE_URL}/gallery/${itemId}`, galleryData, {
       headers: { Authorization: `Bearer ${token}` },
     });
+  },
+
+  // Like a gallery item
+  async likeGalleryItem(itemId) {
+    return await axios.put(`${BASE_URL}/gallery/${itemId}/likes`);
   },
 
   // Delete a gallery item

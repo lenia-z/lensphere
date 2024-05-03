@@ -55,10 +55,42 @@ const updateGalleryItem = async (req, res) => {
       .where('id', itemId)
       .where('user_id', userId)
       .update(updates);
+    
+    const updatedGalleryItem = await knex("gallery")
+      .where("id", itemId)
+      .where("user_id", userId)
+      .first();
 
-    res.status(200).json({ success: true })
+    res.status(200).json(updatedGalleryItem)
   } catch (error) {
     res.status(500).json({ message: 'Error updating gallery item', error: error });
+  }
+};
+
+// Like a gallery item
+const likeGalleryItem = async (req, res) => {
+  try {
+    const itemId = req.params.id;
+
+    const galleryItem = await knex("gallery").where("id", itemId).first();
+
+    if (!galleryItem) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Gallery item not found" });
+    }
+
+    await knex("gallery")
+      .where("id", itemId)
+      .update({ likes: galleryItem.likes + 1 });
+
+    const updatedGalleryItem = await knex("gallery")
+      .where("id", itemId)
+      .first();
+
+    res.status(200).json(updatedGalleryItem);
+  } catch (error) {
+    res.status(500).json({ message: 'Error liking gallery item', error: error });
   }
 };
 
@@ -84,5 +116,6 @@ module.exports = {
   getUserGalleryItems,
   createGalleryItem,
   updateGalleryItem,
+  likeGalleryItem,
   deleteGalleryItem,
 };

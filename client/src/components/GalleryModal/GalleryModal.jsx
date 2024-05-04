@@ -1,5 +1,5 @@
 import timeHelper from "../../utils/timestamp_helpers";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import LikeButton from "../LikeButton/LikeButton";
 
 const GalleryModal = ({ isOpen, onClose, content, onLike }) => {

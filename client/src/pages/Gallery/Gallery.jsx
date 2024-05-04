@@ -1,45 +1,78 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import GalleryItem from "../../components/GalleryItem/GalleryItem";
 import GalleryModal from "../../components/GalleryModal/GalleryModal";
+import GalleryUploadModal from "../../components/GalleryUploadModal/GalleryUploadModal";
+import SubNav from "../../components/SubNav/SubNav";
 import APP_API from "../../utils/api";
 
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [users, setUsers] = useState([]);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [itemModalOpen, setItemModalOpen] = useState(false);
+  const [uploadModalOpen, setUploadModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
 
-const handleLike = async (itemId) => {
-  try {
-    const response = await APP_API.likeGalleryItem(itemId);
-
-    if (response) {
-      await fetchData();
-      setSelectedItem((prevSelectedItem) => ({
-        ...prevSelectedItem,
-        likes: response.data.likes,
-      }));
+  const handleUpload = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setUploadModalOpen(true);
+    } else {
+      navigate("/login");
     }
-  } catch (error) {
-    console.error("Failed to like gallery item:", error);
-  }
-};
+  };
+
+  const handleLike = async (itemId) => {
+    try {
+      const response = await APP_API.likeGalleryItem(itemId);
+
+      if (response) {
+        const updatedGallery = gallery.map((item) => {
+          if (item.id === itemId) {
+            return { ...item, likes: item.likes + 1 };
+          }
+          return item;
+        });
+
+        setGallery(updatedGallery);
+
+        if (selectedItem && selectedItem.id === itemId) {
+          setSelectedItem((prevSelectedItem) => ({
+            ...prevSelectedItem,
+            likes: prevSelectedItem.likes + 1,
+          }));
+        }
+      }
+    } catch (error) {
+      console.error("Failed to like gallery item:", error);
+    }
+  };
   
   const handleItemClick = (item) => {
     setSelectedItem(item);
-    setModalOpen(true);
+    setItemModalOpen(true);
   };
 
   const handleCloseModal = async () => {
-    setModalOpen(false);
+    setItemModalOpen(false);
   };
 
   const fetchData = async () => {
     try {
       const galleryResponse = await APP_API.getAllGalleryItems();
       const usersResponse = await APP_API.getUsersProfile();
-      setGallery(galleryResponse.data);
+
+      let randomGalleryItems = galleryResponse.data
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 10);
+
+      randomGalleryItems = randomGalleryItems.sort(
+        (a, b) => new Date(a.create_at) - new Date(b.create_at)
+      );
+
+      setGallery(randomGalleryItems);
       setUsers(usersResponse.data);
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -85,7 +118,8 @@ const handleLike = async (itemId) => {
   };
 
   return (
-    <div className="mt-16 pt-8 p-16 px-8 md:p-16 xl:px-64 xl:py-16">
+    <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32">
+      <SubNav title="GAllERY" handleRefresh={() => fetchData()} handleUpload={handleUpload} />
       <div className="flex flex-wrap mx-auto">
         {orderedItems().map((item, index) => (
           <div key={item.id} className="w-full md:w-1/2 px-0">
@@ -97,10 +131,14 @@ const handleLike = async (itemId) => {
         ))}
       </div>
       <GalleryModal
-        isOpen={modalOpen}
+        isOpen={itemModalOpen}
         onClose={handleCloseModal}
         content={selectedItem}
         onLike={handleLike}
+      />
+      <GalleryUploadModal
+        isOpen={uploadModalOpen}
+        onClose={() => setUploadModalOpen(false)}
       />
     </div>
   );

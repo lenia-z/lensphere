@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={ <GalleryPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
       </BrowserRouter>
     </div>

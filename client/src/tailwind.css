@@ -1618,6 +1618,14 @@ html:has(.drawer-toggle:checked){
   top: 0.5rem;
 }
 
+.top-1{
+  top: 0.25rem;
+}
+
+.top-10{
+  top: 2.5rem;
+}
+
 .z-50{
   z-index: 50;
 }
@@ -1795,6 +1803,10 @@ html:has(.drawer-toggle:checked){
   gap: 1rem;
 }
 
+.gap-3{
+  gap: 0.75rem;
+}
+
 .overflow-hidden{
   overflow: hidden;
 }
@@ -1923,6 +1935,16 @@ html:has(.drawer-toggle:checked){
   padding-bottom: 0.5rem;
 }
 
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .pb-16{
   padding-bottom: 4rem;
 }
@@ -1980,6 +2002,10 @@ html:has(.drawer-toggle:checked){
 
 .font-normal{
   font-weight: 400;
+}
+
+.font-bold{
+  font-weight: 700;
 }
 
 .leading-tight{

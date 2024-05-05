@@ -59,7 +59,7 @@ const GalleryUploadModal = ({ isOpen, onClose }) => {
               className="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-slate-50 file:text-slate-700 hover:file:bg-slate-100 mb-4"
             />
             <textarea
-              placeholder="Please enter description..."
+              placeholder="Enter description"
               className={`border p-2 w-full rounded-md mb-2 resize-none bg-stone-100 placeholder-slate-400 text-xs md:text-sm font-base-300 focus:outline-none focus:ring-1 ${
                 hasError ? "ring-1 ring-red-500" : "ring-slate-300"
               }`}

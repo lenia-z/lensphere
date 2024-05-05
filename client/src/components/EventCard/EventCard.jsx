@@ -31,7 +31,7 @@ const EventCard = ({ id, title, description, date, address, likes }) => {
         </p>
       </div>
       <div className="flex justify-end items-center gap-2">
-        <p>{likeCount}</p>
+        <p>{likeCount > 999 ? "999+" : likeCount}</p>
         <LikeButton mode="event" handleLike={handleLike} />
       </div>
     </div>

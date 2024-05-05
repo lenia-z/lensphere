@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import EventCard from "../../components/EventCard/EventCard";
 import SubNav from "../../components/SubNav/SubNav";
 import EventUploadModal from "../../components/EventUploadModal/EventUploadModal";
@@ -8,6 +9,16 @@ import timeHelper from "../../utils/timestamp_helpers";
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleUpload = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setUploadModalOpen(true);
+    } else {
+      navigate("/login");
+    }
+  }
 
   const fetchEvents = async () => {
     try {
@@ -30,7 +41,7 @@ const Events = () => {
 
   return (
     <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32">
-      <SubNav title="EVENTS" handleUpload={() => {setUploadModalOpen(true)}} />
+      <SubNav title="EVENTS" handleUpload={handleUpload} />
       {events.map((event) => (
         <EventCard
           key={event.id}

@@ -6,7 +6,7 @@ const SubNav = ({ title, handleRefresh, handleUpload }) => {
       </p>
       <div>
         <button
-          class={`inline-flex justify-center items-center text-3xl text-stone-100 w-8 h-8 cursor-pointer ${title === "EVENT" ? "hidden" : ""}`}
+          class={`inline-flex justify-center items-center text-3xl text-stone-100 w-8 h-8 cursor-pointer ${title === "EVENTS" ? "hidden" : ""}`}
           onClick={handleRefresh}
         >
           <svg

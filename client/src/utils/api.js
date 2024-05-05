@@ -122,6 +122,11 @@ const Lensphere_API = {
     });
   },
 
+  // Like an event
+  async likeEvent(eventId) {
+    return await axios.put(`${BASE_URL}/events/${eventId}/likes`);
+  },
+
   // Delete an event
   async deleteEvent(eventId) {
     const token = localStorage.getItem("token");

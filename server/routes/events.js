@@ -5,6 +5,8 @@ const { authenticateWithJwt } = require('../middleware/auth');
 
 router.get('/', eventsController.getAllEvents);
 
+router.put("/:id/likes", eventsController.likeEvent);
+
 router.use(authenticateWithJwt);
 
 router.get('/user', eventsController.getUserEvents);

@@ -34,10 +34,12 @@ const Events = () => {
       {events.map((event) => (
         <EventCard
           key={event.id}
+          id={event.id}
           title={event.title}
           description={event.description}
           date={timeHelper(event.date)}
           address={event.address + " " + event.city + ", " + event.province + " " + event.country}
+          likes={event.likes}
         />
       ))}
       <EventUploadModal isOpen={uploadModalOpen} onClose={() => {setUploadModalOpen(false)}} />

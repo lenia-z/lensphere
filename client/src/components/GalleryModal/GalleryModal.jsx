@@ -43,7 +43,7 @@ const GalleryModal = ({ isOpen, onClose, content, onLike }) => {
           <p className="">{timeHelper(content.create_at)}</p>
           <div className="flex items-center gap-2">
             <span>{content.likes <= 999 ? content.likes : "999+"}</span>
-            <LikeButton handleLike={() => onLike(content.id)} />
+            <LikeButton mode="gallery" handleLike={() => onLike(content.id)} />
           </div>
         </div>
       </div>

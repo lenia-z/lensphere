@@ -1,12 +1,12 @@
 const SubNav = ({ title, handleRefresh, handleUpload }) => {
   return (
     <div className="w-full h-auto text-stone-100 font-light text-xs md:text-sm flex justify-between mt-16 py-2">
-      <p class="inline-flex justify-center items-center text-2xl font-light text-stone-100">
+      <p className="inline-flex justify-center items-center text-2xl font-light text-stone-100">
         {title}
       </p>
       <div>
         <button
-          class={`inline-flex justify-center items-center text-3xl text-stone-100 w-8 h-8 cursor-pointer ${title === "EVENTS" ? "hidden" : ""}`}
+          className={`inline-flex justify-center items-center text-3xl text-stone-100 w-8 h-8 cursor-pointer ${title === "EVENTS" ? "hidden" : ""}`}
           onClick={handleRefresh}
         >
           <svg
@@ -23,7 +23,7 @@ const SubNav = ({ title, handleRefresh, handleUpload }) => {
           </svg>
         </button>
         <button
-          class="inline-flex justify-center items-center text-3xl font-extralight text-stone-100 w-8 h-8 cursor-pointer"
+          className="inline-flex justify-center items-center text-3xl font-extralight text-stone-100 w-8 h-8 cursor-pointer"
           onClick={handleUpload}
         >
           +

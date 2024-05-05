@@ -80,6 +80,33 @@ const updateEvent = async (req, res) => {
   }
 };
 
+// Like an event
+const likeEvent = async (req, res) => {
+  try {
+    const eventId = req.params.id;
+
+    const eventItem = await knex("events").where("id", eventId).first();
+
+    if (!eventItem) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Event not found" });
+    }
+
+    await knex("events")
+      .where("id", eventId)
+      .update({ likes: eventItem.likes + 1 });
+
+    const updatedEvent = await knex("events")
+      .where("id", eventId)
+      .first();
+
+    res.status(200).json(updatedEvent);
+  } catch (error) {
+    res.status(500).json({ message: 'Error liking event', error });
+  }
+};
+
 // Delete an existing event
 const deleteEvent = async (req, res) => {
   try {
@@ -102,5 +129,6 @@ module.exports = {
   getUserEvents,
   createEvent,
   updateEvent,
+  likeEvent,
   deleteEvent,
 };

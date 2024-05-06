@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { useAuth } from "./context/AuthContext";
 import { useEffect } from "react";
@@ -8,6 +8,8 @@ import GalleryPage from "./pages/Gallery/Gallery";
 import EventsPage from "./pages/Events/Events";
 import AuthPage from "./pages/Auth/AuthPage";
 import DashboardPage from "./pages/Dashboard/Dashboard";
+import GalleryDashboard from "./components/GalleryDashboard/GalleryDashboard";
+import EventsDashboard from "./components/EventsDashboard/EventsDashboard";
 
 function App() {
 
@@ -22,7 +24,11 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/auth" element={<AuthPage />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage />}>
+              <Route index element={<Navigate replace to="gallery" />} />
+              <Route path="gallery" element={<GalleryDashboard />} />
+              <Route path="events" element={<EventsDashboard />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </div>

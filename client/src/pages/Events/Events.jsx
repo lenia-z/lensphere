@@ -40,7 +40,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32">
+    <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32 max-w-[100rem] mx-auto">
       <SubNav title="EVENTS" handleUpload={handleUpload} />
       {events.map((event) => (
         <EventCard
@@ -49,11 +49,24 @@ const Events = () => {
           title={event.title}
           description={event.description}
           date={timeHelper(event.date)}
-          address={event.address + " " + event.city + ", " + event.province + " " + event.country}
+          address={
+            event.address +
+            " " +
+            event.city +
+            ", " +
+            event.province +
+            " " +
+            event.country
+          }
           likes={event.likes}
         />
       ))}
-      <EventUploadModal isOpen={uploadModalOpen} onClose={() => {setUploadModalOpen(false)}} />
+      <EventUploadModal
+        isOpen={uploadModalOpen}
+        onClose={() => {
+          setUploadModalOpen(false);
+        }}
+      />
     </div>
   );
 };

@@ -118,8 +118,12 @@ const Gallery = () => {
   };
 
   return (
-    <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32">
-      <SubNav title="GAllERY" handleRefresh={() => fetchData()} handleUpload={handleUpload} />
+    <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32 max-w-[100rem] mx-auto">
+      <SubNav
+        title="GAllERY"
+        handleRefresh={() => fetchData()}
+        handleUpload={handleUpload}
+      />
       <div className="flex flex-wrap mx-auto">
         {orderedItems().map((item, index) => (
           <div key={item.id} className="w-full md:w-1/2 px-0">

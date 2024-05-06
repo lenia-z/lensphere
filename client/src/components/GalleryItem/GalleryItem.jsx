@@ -4,7 +4,7 @@ const GalleryItem = ({ item, onItemClick }) => {
   const { mode, image, username, create_at } = item
   return (
     <div
-      className={`w-full h-[45.75vw] md:h-[21vw] xl:h-[15.5vw] flex ${
+      className={`w-full h-[45.75vw] md:h-[21vw] xl:h-[15.5vw] xl:max-h-[17rem] flex ${
         mode === "2" ? "flex-row-reverse" : ""
       }`}
     >

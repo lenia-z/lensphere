@@ -10,7 +10,10 @@ const EventsDashboard = () => {
     try {
       const response = await APP_API.getUserEvents();
       if (response) {
-        setUserEvents(response.data);
+        const sortedGalleries = response.data.sort(
+          (a, b) => new Date(a.createdDate) - new Date(b.createdDate)
+        );
+        setUserEvents(sortedGalleries);
       }
     } catch (error) {
       console.error("Failed to get user's events", error);

@@ -11,11 +11,16 @@ module.exports = {
   daisyui: {
     themes: ["black"],
     base: false,
-    styled: true, 
+    styled: true,
     utils: true,
     prefix: "",
     logs: true,
     themeRoot: ":root",
   },
   plugins: [require("daisyui")],
+  variants: {
+    extend: {
+      opacity: ["group-hover"],
+    },
+  },
 };

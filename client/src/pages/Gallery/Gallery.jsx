@@ -20,7 +20,7 @@ const Gallery = () => {
     if (token) {
       setUploadModalOpen(true);
     } else {
-      navigate("/login");
+      navigate("/auth");
     }
   };
 

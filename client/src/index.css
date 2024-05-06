@@ -25,3 +25,7 @@ html::-webkit-scrollbar {
   width: 0; /* 针对 Chrome, Safari, 和 Opera */
   height: 0;
 }
+
+label {
+  cursor: pointer;
+}

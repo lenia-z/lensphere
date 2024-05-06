@@ -4,7 +4,7 @@ const usersController = require('../controllers/users_controller');
 const { authenticateWithJwt } = require('../middleware/auth');
 
 router.get('/', usersController.getUsersProfile);
-router.get("/me", usersController.getCurrentUserProfile);
+router.get("/me", authenticateWithJwt, usersController.getCurrentUserProfile);
 router.post('/signup', usersController.signup);
 router.post('/login', usersController.login);
 router.put('/update-profile', authenticateWithJwt, usersController.updateProfile);

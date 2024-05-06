@@ -1,19 +1,15 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import APP_API from "../../utils/api";
+import { useAuth } from "../../context/AuthContext";
 
-const UserMenu = ({ isAuthenticated }) => {
+const UserMenu = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const navigate = useNavigate();
+  const { isAuthenticated, username, logout } = useAuth();
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    logout();
   };
-
-  const handleLogin = () => {
-    // Navigate("/login")
-  }
-
-  const username = "YourUsername";
 
   return (
     <div className="flex items-center">
@@ -35,10 +31,7 @@ const UserMenu = ({ isAuthenticated }) => {
               dropdownOpen ? "border-t border-stone-100 " : "hidden"
             }`}
           >
-            <li
-              className="ml-auto cursor-pointer"
-              onClick={handleLogout}
-            >
+            <li className="ml-auto cursor-pointer" onClick={handleLogout}>
               Logout
             </li>
           </ul>
@@ -46,8 +39,7 @@ const UserMenu = ({ isAuthenticated }) => {
       ) : (
         <Link
           className="px-2 py-1 border-b border-transparent hover:border-stone-100  "
-          to="/login"
-          onClick={handleLogin}
+          to="/auth"
         >
           Login
         </Link>

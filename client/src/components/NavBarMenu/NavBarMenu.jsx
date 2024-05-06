@@ -1,32 +1,37 @@
 import { NavLink } from "react-router-dom";
 import "./NavBarMenu.css";
+import { useAuth } from "../../context/AuthContext";
 
-const NavBarMenu = ({ isAuthenticated }) => (
-  <nav className="hidden md:flex justify-between items-center gap-4">
-    <NavLink to="/" className="px-2 py-1 border rounded border-transparent">
-      Home
-    </NavLink>
-    <NavLink
-      to="/gallery"
-      className="px-2 py-1 border rounded border-transparent"
-    >
-      Gallery
-    </NavLink>
-    <NavLink
-      to="/events"
-      className="px-2 py-1 border rounded border-transparent"
-    >
-      Events
-    </NavLink>
-    {isAuthenticated && (
+const NavBarMenu = () => {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <nav className="hidden md:flex justify-between items-center gap-4">
+      <NavLink to="/" className="px-2 py-1 border rounded border-transparent">
+        Home
+      </NavLink>
       <NavLink
-        to="/dashboard"
+        to="/gallery"
         className="px-2 py-1 border rounded border-transparent"
       >
-        Dashboard
+        Gallery
       </NavLink>
-    )}
-  </nav>
-);
+      <NavLink
+        to="/events"
+        className="px-2 py-1 border rounded border-transparent"
+      >
+        Events
+      </NavLink>
+      {isAuthenticated && (
+        <NavLink
+          to="/dashboard"
+          className="px-2 py-1 border rounded border-transparent"
+        >
+          Dashboard
+        </NavLink>
+      )}
+    </nav>
+  )
+};
 
 export default NavBarMenu;

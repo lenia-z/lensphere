@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { useAuth } from "./context/AuthContext";
+import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import GalleryPage from "./pages/Gallery/Gallery";
@@ -7,9 +9,11 @@ import EventsPage from "./pages/Events/Events";
 import AuthPage from "./pages/Auth/AuthPage";
 
 function App() {
+
   return (
     <AuthProvider>
       <div data-theme="black">
+        <SessionChecker />
         <BrowserRouter>
           <Header />
           <Routes>
@@ -25,3 +29,14 @@ function App() {
 }
 
 export default App;
+
+const SessionChecker = () => {
+  const { checkSession } = useAuth();
+
+  useEffect(() => {
+    const intervalId = setInterval(checkSession, 1000 * 60);
+    return () => clearInterval(intervalId);
+  }, [checkSession]);
+
+  return null;
+};

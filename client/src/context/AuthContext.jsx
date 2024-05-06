@@ -29,6 +29,8 @@ export const AuthProvider = ({ children }) => {
   }, [isAuthenticated]);
 
   const login = (token) => {
+    const now = new Date();
+    localStorage.setItem("loginTime", now.getTime().toString());
     localStorage.setItem("token", token);
     setIsAuthenticated(true);
   };
@@ -38,11 +40,23 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
   };
 
+  const checkSession = () => {
+    const loginTime = localStorage.getItem("loginTime");
+    const now = new Date();
+
+    const sessionDuration = 1000 * 60 * 60 * 24;
+
+    if (now.getTime() - Number(loginTime) > sessionDuration) {
+      logout();
+    }
+  };
+
   const value = {
     isAuthenticated,
     username,
     login,
     logout,
+    checkSession,
   };
 
   return (

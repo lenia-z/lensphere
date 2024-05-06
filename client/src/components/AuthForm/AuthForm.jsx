@@ -86,7 +86,7 @@ const AuthForm = () => {
           password: signupData.password,
         });
         if (loginResponse.status === 200) {
-          localStorage.setItem("token", response.data.token);
+          login(loginResponse.data.token);
           setLoginMsg("Signup successful");
           navigate(-1);
         }

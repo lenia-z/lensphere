@@ -110,7 +110,7 @@ const EventUploadModal = ({ isOpen, onClose }) => {
               <div className="flex flex-col gap-2">
                 <label htmlFor="address">Address</label>
                 <input
-                  name="description"
+                  name="address"
                   id="address"
                   value={eventData.address}
                   onChange={handleChange}

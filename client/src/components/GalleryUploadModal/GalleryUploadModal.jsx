@@ -23,7 +23,7 @@ const GalleryUploadModal = ({ isOpen, onClose }) => {
 
         const response = await APP_API.createGalleryItem(formData);
 
-        if (response && response.status === 201) {
+        if (response.status === 201) {
           onClose();
           setDescription("");
           setFile(null);

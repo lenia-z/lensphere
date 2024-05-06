@@ -29,8 +29,7 @@ const createGalleryItem = async (req, res) => {
     const newItem = {
       user_id: userId,
       description: req.body.description,
-      image: `http://localhost:${port}/images/${req.file.filename}`
-      // req.file.path,
+      image: `http://localhost:${process.env.PORT || 5050}/images/${req.file.filename}`
     };
 
     await knex('gallery').insert(newItem);

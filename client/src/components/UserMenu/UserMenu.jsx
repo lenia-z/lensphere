@@ -1,14 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import APP_API from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const UserMenu = () => {
+  const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { isAuthenticated, username, logout } = useAuth();
 
   const handleLogout = () => {
     logout();
+    if (window.location.pathname.startsWith("/dashboard")) {
+      navigate("/");
+    }
   };
 
   return (

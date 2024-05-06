@@ -2070,10 +2070,6 @@ html:has(.drawer-toggle:checked){
   color: rgb(148 163 184 / var(--tw-placeholder-opacity));
 }
 
-.opacity-0{
-  opacity: 0;
-}
-
 .opacity-100{
   opacity: 1;
 }
@@ -2293,10 +2289,6 @@ label {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
-.group:hover .group-hover\:opacity-100{
-  opacity: 1;
-}
-
 @media (min-width: 640px){
   .sm\:text-\[2rem\]{
     font-size: 2rem;
@@ -2389,10 +2381,6 @@ label {
   .md\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .md\:opacity-100{
-    opacity: 1;
   }
 
   .md\:opacity-0{

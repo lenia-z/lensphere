@@ -37,7 +37,7 @@ const Events = () => {
   useEffect(() => {
     document.title = "Events";
     fetchEvents();
-  }, []);
+  }, [events]);
 
   return (
     <div className="px-4 md:px-16 xl:px-64 pb-16 md:pb-32 max-w-[100rem] mx-auto">

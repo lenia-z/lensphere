@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import GalleryPage from "./pages/Gallery/Gallery";
 import EventsPage from "./pages/Events/Events";
 import AuthPage from "./pages/Auth/AuthPage";
+import DashboardPage from "./pages/Dashboard/Dashboard";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/auth" element={<AuthPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
           </Routes>
         </BrowserRouter>
       </div>
